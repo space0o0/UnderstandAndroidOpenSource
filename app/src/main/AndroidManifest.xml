@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".part1.view.CustomViewActivity"></activity>
+        <activity android:name=".part1.view.CustomViewActivity" />
+        <activity android:name=".part1.event.EventActivity"></activity>
     </application>
 
 </manifest>
