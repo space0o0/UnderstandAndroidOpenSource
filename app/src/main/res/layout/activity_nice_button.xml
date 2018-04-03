@@ -6,25 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".customView.NiceButtonActivity">
 
-    <com.space.understandandroidopensource.customView.NiceButton
-        android:id="@+id/niceButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+
+    <ImageView
+        android:id="@+id/good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/nice_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:nickbutton_favor_imgres="@mipmap/nice_red"
-        app:nickbutton_normal_imgres="@mipmap/nice_gray" />
-
-    <com.space.understandandroidopensource.customView.BezierView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
+        app:layout_constraintVertical_bias="0.367" />
 
     <Button
         android:id="@+id/button"
@@ -32,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Button"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

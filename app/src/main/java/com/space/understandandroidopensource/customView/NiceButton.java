@@ -3,6 +3,7 @@ package com.space.understandandroidopensource.customView;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
@@ -19,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.space.understandandroidopensource.R;
+import com.space.understandandroidopensource.utils.ScreenUtils;
 
 
 public class NiceButton extends RelativeLayout {
@@ -65,12 +67,6 @@ public class NiceButton extends RelativeLayout {
 
         addView(imageView);
 
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: ");
-            }
-        });
     }
 
     @Override
@@ -113,11 +109,29 @@ public class NiceButton extends RelativeLayout {
 
     private void addEmoji(int res) {
 
-        int x1 = (int) (mX - Math.random() * 400);
-        int y1 = (int) (mY - Math.random() * 600);
+        double random = Math.random();
 
-        int x2 = (int) (mX - Math.random() * 800);
-        int y2 = (int) (mY + Math.random() * 800);
+        float x = getX() + getWidth() / 2;
+        float screenWidth = ScreenUtils.getWidthPixels((Activity) getContext());
+
+        int x1, y1, x2, y2;
+
+        if (random > (x / screenWidth)) {
+            //偏右喷射
+            x1 = (int) (mX + Math.random() * 400);
+            y1 = (int) (mY - Math.random() * 600);
+
+            x2 = (int) (mX + Math.random() * 800);
+            y2 = (int) (mY + Math.random() * 800);
+
+        } else {
+            //偏左喷射
+            x1 = (int) (mX - Math.random() * 400);
+            y1 = (int) (mY - Math.random() * 600);
+
+            x2 = (int) (mX - Math.random() * 800);
+            y2 = (int) (mY + Math.random() * 800);
+        }
 
         final EmojiImageView view = new EmojiImageView(getContext());
         view.setImageDrawable(ContextCompat.getDrawable(getContext(), res));
