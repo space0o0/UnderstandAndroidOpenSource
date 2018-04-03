@@ -3,21 +3,37 @@
     package="com.space.understandandroidopensource">
 
     <application
+        android:name=".app.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".part1.view.CustomViewActivity" />
+        <activity android:name=".part1.event.EventActivity" />
+        <activity
+            android:name=".part2_ipc.IpcMainActivity"
+            android:process=":ipc"></activity>
+        <activity
+            android:name=".part2_ipc.IpcSecondActivity"
+            android:process=":ipc2"></activity>
+
+        <service
+            android:name=".part2_ipc.messenger.MessengerService"
+            android:process=":messengerService" />
+
+        <activity android:name=".part2_ipc.messenger.MessengerClientActivity">
+
+        </activity>
+        <activity android:name=".customView.NiceButtonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".part1.view.CustomViewActivity" />
-        <activity android:name=".part1.event.EventActivity"></activity>
     </application>
 
 </manifest>

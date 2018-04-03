@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NiceButton">
+        <attr name="nickbutton_normal_imgres" format="reference" />
+        <attr name="nickbutton_favor_imgres" format="reference" />
+    </declare-styleable>
+</resources>
